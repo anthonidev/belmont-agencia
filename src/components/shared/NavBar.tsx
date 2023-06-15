@@ -54,7 +54,7 @@ export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative isolate z-10 bg-white">
+    <header className=" isolate z-10 bg-indigo-900 sticky top-0">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -64,7 +64,7 @@ export default function NavBar() {
             <span className="sr-only">Belmont Agencia</span>
             <Image
               className="h-8 w-auto"
-              src={"images/logoPrimary.svg"}
+              src={"images/LogoWhite.svg"}
               alt="Belmont Agencia"
               width={100}
               height={100}
@@ -74,7 +74,7 @@ export default function NavBar() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-100"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Abrir menu de opciones</span>
@@ -83,7 +83,7 @@ export default function NavBar() {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover>
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-100">
               Servicios
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
@@ -100,27 +100,27 @@ export default function NavBar() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 -translate-y-1"
             >
-              <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5">
+              <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-indigo-900 pt-14 shadow-lg ring-1 ring-gray-900/5">
                 <div className="mx-auto grid max-w-7xl grid-cols-3 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
                   {servicios.map((item) => (
                     <div
                       key={item.name}
-                      className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50"
+                      className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-indigo-800 "
                     >
-                      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-amber-500 group-hover:bg-white">
                         <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                          className="h-6 w-6 text-gray-100 group-hover:text-indigo-600"
                           aria-hidden="true"
                         />
                       </div>
-                      <a
+                      <Link
                         href={item.href}
-                        className="mt-6 block font-semibold text-gray-900"
+                        className="mt-6 block font-semibold text-amber-500"
                       >
                         {item.name}
                         <span className="absolute inset-0" />
-                      </a>
-                      <p className="mt-1 text-gray-600">{item.description}</p>
+                      </Link>
+                      <p className="mt-1 text-gray-100">{item.description}</p>
                     </div>
                   ))}
                 </div>
@@ -131,7 +131,7 @@ export default function NavBar() {
                         <a
                           key={item.name}
                           href={item.href}
-                          className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                          className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-500 hover:bg-gray-100"
                         >
                           <item.icon
                             className="h-5 w-5 flex-none text-gray-400"
@@ -147,13 +147,13 @@ export default function NavBar() {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-100">
             Nosotros
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-100">
             Contactanos
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-100">
             Blog
           </a>
         </Popover.Group>
@@ -165,13 +165,13 @@ export default function NavBar() {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-indigo-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href={"/"} className="-m-1.5 p-1.5">
               <span className="sr-only">Belmont Agencia</span>
               <Image
                 className="h-8 w-auto"
-                src={"images/logoPrimary.svg"}
+                src={"images/logoWhite.svg"}
                 alt="Belmont Agencia"
                 width={100}
                 height={100}
@@ -179,7 +179,7 @@ export default function NavBar() {
             </Link>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 rounded-md p-2.5 text-gray-100"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Cerrar Menu </span>
@@ -192,7 +192,7 @@ export default function NavBar() {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-100 hover:bg-indigo-8000">
                         Servicios
                         <ChevronDownIcon
                           className={classNames(
@@ -208,7 +208,7 @@ export default function NavBar() {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-100 hover:bg-indigo-800"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -219,19 +219,19 @@ export default function NavBar() {
                 </Disclosure>
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-indigo-800"
                 >
                   Nosotros
                 </a>
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-indigo-800"
                 >
                   Contactanos
                 </a>
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-indigo-800"
                 >
                   Blog
                 </a>
