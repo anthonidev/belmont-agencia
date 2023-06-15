@@ -8,7 +8,11 @@ import {
   PerspectiveCamera,
   Stars,
 } from "@react-three/drei";
-import "./styles.css";
+import Hero from "./components/Hero";
+import Cta from "./components/Cta";
+import NewsLetter from "./components/Newsletter";
+import Testimonials from "./components/Testimonials";
+import Contact from "./components/Contact";
 type ModelProps = {
   url: string;
 };
@@ -84,6 +88,11 @@ export default function Home() {
         </Canvas>
         <Loader />
       </div>
+      <Hero />
+      <Cta />
+      <NewsLetter />
+      <Testimonials />
+      <Contact />
     </>
   );
 }
