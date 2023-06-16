@@ -1,36 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 const navigation = {
   solutions: [
-    { name: "Manejo de Redes Sociales", href: "#" },
-    { name: "Creación de Marca", href: "#" },
-    { name: "Creación de Páginas Web a Medida", href: "#" },
-  ],
-  support: [
-    { name: "Pricing", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "API Status", href: "#" },
+    {
+      name: "Manejo de Redes Sociales",
+      href: "/servicios/manejo-de-redes-sociales",
+    },
+    { name: "Creación de Marca", href: "/servicios/creacion-de-marca" },
+    {
+      name: "Creación de Páginas Web a Medida",
+      href: "/servicios/creacion-de-paginas-web-a-medida",
+    },
   ],
   company: [
-    { name: "Nosotros", href: "#" },
-    { name: "Contactanos", href: "#" },
-    { name: "Blog", href: "#" },
+    { name: "Nosotros", href: "/nosotros" },
+    { name: "Contactanos", href: "/contactanos" },
+    { name: "Blog", href: "/blog" },
   ],
   legal: [
     { name: "Privacidad", href: "#" },
@@ -77,8 +63,7 @@ export default function Footer() {
           <Link href={"/"} className="-m-1.5 p-1.5">
             <span className="sr-only">Belmont Agencia</span>
             <Image
-              className="h-7 "
-              src={"images/LogoPrimary.svg"}
+              src={"/images/LogoPrimary.svg"}
               alt="Belmont Agencia"
               width={100}
               height={100}
@@ -112,12 +97,12 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <a
+                      <Link
                         href={item.href}
                         className="text-sm leading-6 text-gray-600 hover:text-gray-900"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -129,12 +114,12 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
-                      <a
+                      <Link
                         href={item.href}
                         className="text-sm leading-6 text-gray-600 hover:text-gray-900"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
